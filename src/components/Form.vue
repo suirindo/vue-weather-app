@@ -11,7 +11,8 @@
 
     const city = ref("")
     const submitForm = () => {
-        emits("submit-form")
+        emits("submit-form", city.value) // ref()のデータに<script>タグ内からアクセスするには.valueを使う必要がある
+        city.value = ""
     }
 
     const emits = defineEmits([
